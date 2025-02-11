@@ -1,53 +1,33 @@
-                <li><a href="mood-tracker.html">Mood Tracker</a></li>
-                <li><a href="nuclear-mapping.html">Nuclear Mapping</a></li>
-                <li><a href="pocket-buddy.html">Pocket Buddy</a></li>
-               
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h2>Hello, My name is Mosfiqur Rahman Mahin</h2>
-        <img src="" alt="" class="profile-pic">
-        <p>Here you can find all my latest projects and achievements.</p>
-    </section>
-   <!-- Weather Display Section -->
-    <aside id="weather" style="position: fixed; top: 10px; right: 10px; background: white; padding: 10px; border: 1px solid #ccc;">
-        <h3>Weather</h3>
-        <div id="weather-info">Loading...</div>
-    </aside>
-
-    <footer>
-        <p>&copy; 2023 Caliburn's Domain</p>
-    </footer>
-
-    <script>
-        // Function to fetch weather data
-        async function fetchWeather() {
-            const apiKey = '007449eba0b25ab12187d3d0a44e8bc0'; // Replace with your OpenWeatherMap API key
-            const city = 'Dhaka'; // Replace with your preferred city
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (response.ok) {
-                    const weatherDescription = data.weather[0].description;
-                    const temperature = data.main.temp;
-                    document.getElementById('weather-info').innerHTML = `
-                        <p>${city}: ${temperature}°C</p>
-                        <p>${weatherDescription}</p>
-                    `;
-                } else {
-                    document.getElementById('weather-info').textContent = 'Weather data not available.';
-                }
-            } catch (error) {
-                document.getElementById('weather-info').textContent = 'Error fetching weather data.';
-            }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Audio Tracks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
         }
-
-        // Fetch weather data on page load
-        fetchWeather();
-    </script>
+        .course-list {
+            margin-top: 20px;
+        }
+        .course-list a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Course Audio Tracks</h1>
+    <p>Select a course to listen to the lectures:</p>
+  
+ <div class="course-list">
+        <a href="course1.html">ENG 201: Introduction to History of England</a>
+        <a href="course2.html">ENG 203: Environment And Science</a>
+        <a href="course2.html">ENG 204: 16 and 17th Century Poetry and Prose </a>
+        <a href="course3.html">ENG 205: Greek and Roman Classicals</a>
+    </div>
 </body>
 </html>
